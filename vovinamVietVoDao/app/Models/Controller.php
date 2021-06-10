@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Joueur extends Model
+class Controller extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
@@ -16,12 +16,7 @@ class Joueur extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'lastName',
-        'phone',
-        'birthdate',
-        'poid',
-        'club_id',
+        'code',
     ];
 
     /**
@@ -31,18 +26,5 @@ class Joueur extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'birthdate' => 'date',
-        'club_id' => 'integer',
     ];
-
-
-    public function technics()
-    {
-        return $this->hasMany(\App\Models\Technic::class);
-    }
-
-    public function club()
-    {
-        return $this->belongsTo(\App\Models\Club::class);
-    }
 }

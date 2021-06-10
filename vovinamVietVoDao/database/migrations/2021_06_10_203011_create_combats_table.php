@@ -17,16 +17,18 @@ class CreateCombatsTable extends Migration
 
         Schema::create('combats', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->integer('round');
-            $table->integer('scoreRed');
-            $table->integer('scoreBlue');
-            $table->foreignId('entraineurRed')->constrained('entraineur');
-            $table->foreignId('entraineurBlue')->constrained('entraineur');
-            $table->foreignId('salle_id')->constrained();
             $table->foreignId('joueurBlue')->constrained('joueur');
+            $table->integer('scoreBlue')->nullable();
+            $table->foreignId('entraineurBlue')->constrained('entraineur');
+            $table->foreignId('controllerBlue')->constrained('controller');
             $table->foreignId('joueurRed')->constrained('joueur');
+            $table->integer('scoreRed')->nullable();
+            $table->foreignId('entraineurRed')->constrained('entraineur');
+            $table->foreignId('controllerRed')->constrained('controller');
             $table->foreignId('arbitre_id')->constrained();
+            $table->foreignId('juge_id')->constrained();
+            $table->date('date');
+            $table->foreignId('salle_id')->constrained();
             $table->timestamps();
         });
 

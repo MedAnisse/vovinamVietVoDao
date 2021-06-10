@@ -21,4 +21,7 @@ Route::group([
     Route::crud('joueur', 'JoueurCrudController');
     Route::crud('juge', 'JugeCrudController');
     Route::crud('salle', 'SalleCrudController');
+    Route::crud('combathistoric', 'CombatHistoricCrudController');
+    Route::crud('controller', 'ControllerCrudController');
+    Route::crud('technic', 'TechnicCrudController');
 }); // this should be the absolute last line of this file

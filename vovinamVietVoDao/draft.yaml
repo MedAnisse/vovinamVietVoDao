@@ -20,6 +20,8 @@ models:
     birthdate: date
     poid: string
     club_id: id foreign
+    relationships:
+      hasMany: Technic
 
   Models\Juge:
     name: string
@@ -36,19 +38,42 @@ models:
       belongsToMany: Combat
 
   Models\Combat:
-    date: date
-    round: integer
-    scoreRed: integer
-    scoreBlue: integer
-    entraineurRed: id foreign:entraineur.id
-    entraineurBlue: id foreign:entraineur.id
-    salle_id:  id foreign
     joueurBlue: id foreign:joueur.id
+    scoreBlue: integer nullable
+    entraineurBlue: id foreign:entraineur.id
+    controllerBlue: id foreign:controller.id
     joueurRed: id foreign:joueur.id
-    arbitre_id: id foreign
+    scoreRed: integer nullable
+    entraineurRed: id foreign:entraineur.id
+    controllerRed: id foreign:controller.id
+    arbitre_id: id foreign 
+    juge_id: id foreign
+    date: date
+    salle_id:  id foreign
+
+  Models\CombatHistoric:
+    joueurBlue: id foreign:joueur.id
+    scoreBlue: integer
+    entraineurBlue: id foreign:entraineur.id
+    controllerBlue: id foreign:controller.id
+    jugeBlue: id foreign:juge.id
+    joueurRed: id foreign:joueur.id
+    scoreRed: integer
+    entraineurRed: id foreign:entraineur.id
+    controllerRed: id foreign:controller.id
+    jugeRed: id foreign:juge.id
+    arbitre_id: id foreign 
+    date: date
+    salle_id:  id foreign 
       
   Models\Salle:
     address: string
     nome: string
+    
+  Models\Controller:
+    code: uuid
 
-seeders:  Club, Entraineur, Joueur, Juge, Arbitre, Combat, Salle
+  Models\Technic:
+    nome: string    
+
+seeders:  Club, Entraineur, Joueur, Juge, Arbitre, Combat, Salle, Controller, Technic, CombatHistoric

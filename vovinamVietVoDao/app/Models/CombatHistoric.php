@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Combat extends Model
+class CombatHistoric extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
@@ -20,12 +20,13 @@ class Combat extends Model
         'scoreBlue',
         'entraineurBlue',
         'controllerBlue',
+        'jugeBlue',
         'joueurRed',
         'scoreRed',
         'entraineurRed',
         'controllerRed',
+        'jugeRed',
         'arbitre_id',
-        'juge_id',
         'date',
         'salle_id',
     ];
@@ -40,11 +41,12 @@ class Combat extends Model
         'joueurBlue' => 'integer',
         'entraineurBlue' => 'integer',
         'controllerBlue' => 'integer',
+        'jugeBlue' => 'integer',
         'joueurRed' => 'integer',
         'entraineurRed' => 'integer',
         'controllerRed' => 'integer',
+        'jugeRed' => 'integer',
         'arbitre_id' => 'integer',
-        'juge_id' => 'integer',
         'date' => 'date',
         'salle_id' => 'integer',
     ];
@@ -65,6 +67,11 @@ class Combat extends Model
         return $this->belongsTo(\App\Models\Controller::class);
     }
 
+    public function jugeBlue()
+    {
+        return $this->belongsTo(\App\Models\Juge::class);
+    }
+
     public function joueurRed()
     {
         return $this->belongsTo(\App\Models\Joueur::class);
@@ -80,14 +87,14 @@ class Combat extends Model
         return $this->belongsTo(\App\Models\Controller::class);
     }
 
+    public function jugeRed()
+    {
+        return $this->belongsTo(\App\Models\Juge::class);
+    }
+
     public function arbitre()
     {
         return $this->belongsTo(\App\Models\Arbitre::class);
-    }
-
-    public function juge()
-    {
-        return $this->belongsTo(\App\Models\Juge::class);
     }
 
     public function salle()

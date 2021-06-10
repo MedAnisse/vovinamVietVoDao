@@ -5,23 +5,32 @@ created:
     - database/factories/Models/JugeFactory.php
     - database/factories/Models/ArbitreFactory.php
     - database/factories/Models/CombatFactory.php
+    - database/factories/Models/CombatHistoricFactory.php
     - database/factories/Models/SalleFactory.php
-    - database/migrations/2021_06_06_165708_create_clubs_table.php
-    - database/migrations/2021_06_06_165709_create_entraineurs_table.php
-    - database/migrations/2021_06_06_165710_create_joueurs_table.php
-    - database/migrations/2021_06_06_165711_create_juges_table.php
-    - database/migrations/2021_06_06_165712_create_arbitres_table.php
-    - database/migrations/2021_06_06_165713_create_combats_table.php
-    - database/migrations/2021_06_06_165714_create_salles_table.php
-    - database/migrations/2021_06_06_165715_create_combat_juge_table.php
-    - database/migrations/2021_06_06_165716_create_arbitre_combat_table.php
+    - database/factories/Models/ControllerFactory.php
+    - database/factories/Models/TechnicFactory.php
+    - database/migrations/2021_06_10_203006_create_clubs_table.php
+    - database/migrations/2021_06_10_203007_create_entraineurs_table.php
+    - database/migrations/2021_06_10_203008_create_joueurs_table.php
+    - database/migrations/2021_06_10_203009_create_juges_table.php
+    - database/migrations/2021_06_10_203010_create_arbitres_table.php
+    - database/migrations/2021_06_10_203011_create_combats_table.php
+    - database/migrations/2021_06_10_203012_create_combat_historics_table.php
+    - database/migrations/2021_06_10_203013_create_salles_table.php
+    - database/migrations/2021_06_10_203014_create_controllers_table.php
+    - database/migrations/2021_06_10_203015_create_technics_table.php
+    - database/migrations/2021_06_10_203016_create_combat_juge_table.php
+    - database/migrations/2021_06_10_203017_create_arbitre_combat_table.php
     - app/Models/Club.php
     - app/Models/Entraineur.php
     - app/Models/Joueur.php
     - app/Models/Juge.php
     - app/Models/Arbitre.php
     - app/Models/Combat.php
+    - app/Models/CombatHistoric.php
     - app/Models/Salle.php
+    - app/Models/Controller.php
+    - app/Models/Technic.php
     - database/seeders/ClubSeeder.php
     - database/seeders/EntraineurSeeder.php
     - database/seeders/JoueurSeeder.php
@@ -29,11 +38,17 @@ created:
     - database/seeders/ArbitreSeeder.php
     - database/seeders/CombatSeeder.php
     - database/seeders/SalleSeeder.php
+    - database/seeders/ControllerSeeder.php
+    - database/seeders/TechnicSeeder.php
+    - database/seeders/CombatHistoricSeeder.php
 models:
     Models\Club: { name: string, presidentname: string, presidentlastname: string, presidentphone: string, phone: string, address: string }
     Models\Entraineur: { name: string, lastName: string, phone: string, club_id: 'id foreign' }
-    Models\Joueur: { name: string, lastName: string, phone: string, birthdate: date, poid: string, club_id: 'id foreign' }
+    Models\Joueur: { name: string, lastName: string, phone: string, birthdate: date, poid: string, club_id: 'id foreign', relationships: { hasMany: Technic } }
     Models\Juge: { name: string, lastName: string, phone: string, relationships: { belongsToMany: Combat } }
     Models\Arbitre: { name: string, lastName: string, phone: string, relationships: { belongsToMany: Combat } }
-    Models\Combat: { date: date, round: integer, scoreRed: integer, scoreBlue: integer, entraineurRed: 'id foreign:entraineur.id', entraineurBlue: 'id foreign:entraineur.id', salle_id: 'id foreign', joueurBlue: 'id foreign:joueur.id', joueurRed: 'id foreign:joueur.id', arbitre_id: 'id foreign' }
+    Models\Combat: { joueurBlue: 'id foreign:joueur.id', scoreBlue: 'integer nullable', entraineurBlue: 'id foreign:entraineur.id', controllerBlue: 'id foreign:controller.id', joueurRed: 'id foreign:joueur.id', scoreRed: 'integer nullable', entraineurRed: 'id foreign:entraineur.id', controllerRed: 'id foreign:controller.id', arbitre_id: 'id foreign', juge_id: 'id foreign', date: date, salle_id: 'id foreign' }
     Models\Salle: { address: string, nome: string }
+    Models\CombatHistoric: { joueurBlue: 'id foreign:joueur.id', scoreBlue: integer, entraineurBlue: 'id foreign:entraineur.id', controllerBlue: 'id foreign:controller.id', jugeBlue: 'id foreign:juge.id', joueurRed: 'id foreign:joueur.id', scoreRed: integer, entraineurRed: 'id foreign:entraineur.id', controllerRed: 'id foreign:controller.id', jugeRed: 'id foreign:juge.id', arbitre_id: 'id foreign', date: date, salle_id: 'id foreign' }
+    Models\Controller: { code: uuid }
+    Models\Technic: { nome: string }

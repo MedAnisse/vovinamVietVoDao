@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CombatRequest;
+use App\Http\Requests\ControllerRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CombatCrudController
+ * Class ControllerCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CombatCrudController extends CrudController
+class ControllerCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class CombatCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Combat::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/combat');
-        CRUD::setEntityNameStrings('combat', 'combats');
+        CRUD::setModel(\App\Models\Controller::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/controller');
+        CRUD::setEntityNameStrings('controller', 'controllers');
     }
 
     /**
@@ -39,16 +39,7 @@ class CombatCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('date')->label('anis');
-        CRUD::column('round');
-        CRUD::column('scoreRed');
-        CRUD::column('scoreBlue');
-        CRUD::column('entraineurRed');
-        CRUD::column('entraineurBlue');
-        CRUD::column('salle_id');
-        CRUD::column('joueurBlue');
-        CRUD::column('joueurRed');
-        CRUD::column('arbitre_id');
+        CRUD::column('code');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -65,18 +56,9 @@ class CombatCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CombatRequest::class);
+        CRUD::setValidation(ControllerRequest::class);
 
-        CRUD::field('date');
-        CRUD::field('round');
-        CRUD::field('scoreRed');
-        CRUD::field('scoreBlue');
-        CRUD::field('entraineurRed');
-        CRUD::field('entraineurBlue');
-        CRUD::field('salle_id');
-        CRUD::field('joueurBlue');
-        CRUD::field('joueurRed');
-        CRUD::field('arbitre_id');
+        CRUD::field('code');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

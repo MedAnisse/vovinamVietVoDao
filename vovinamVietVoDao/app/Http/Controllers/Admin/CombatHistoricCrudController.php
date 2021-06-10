@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CombatRequest;
+use App\Http\Requests\CombatHistoricRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CombatCrudController
+ * Class CombatHistoricCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CombatCrudController extends CrudController
+class CombatHistoricCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class CombatCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Combat::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/combat');
-        CRUD::setEntityNameStrings('combat', 'combats');
+        CRUD::setModel(\App\Models\CombatHistoric::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/combathistoric');
+        CRUD::setEntityNameStrings('combathistoric', 'combat_historics');
     }
 
     /**
@@ -39,16 +39,19 @@ class CombatCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('date')->label('anis');
-        CRUD::column('round');
-        CRUD::column('scoreRed');
-        CRUD::column('scoreBlue');
-        CRUD::column('entraineurRed');
-        CRUD::column('entraineurBlue');
-        CRUD::column('salle_id');
         CRUD::column('joueurBlue');
+        CRUD::column('scoreBlue');
+        CRUD::column('entraineurBlue');
+        CRUD::column('controllerBlue');
+        CRUD::column('jugeBlue');
         CRUD::column('joueurRed');
+        CRUD::column('scoreRed');
+        CRUD::column('entraineurRed');
+        CRUD::column('controllerRed');
+        CRUD::column('jugeRed');
         CRUD::column('arbitre_id');
+        CRUD::column('date');
+        CRUD::column('salle_id');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -65,18 +68,21 @@ class CombatCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CombatRequest::class);
+        CRUD::setValidation(CombatHistoricRequest::class);
 
-        CRUD::field('date');
-        CRUD::field('round');
-        CRUD::field('scoreRed');
-        CRUD::field('scoreBlue');
-        CRUD::field('entraineurRed');
-        CRUD::field('entraineurBlue');
-        CRUD::field('salle_id');
         CRUD::field('joueurBlue');
+        CRUD::field('scoreBlue');
+        CRUD::field('entraineurBlue');
+        CRUD::field('controllerBlue');
+        CRUD::field('jugeBlue');
         CRUD::field('joueurRed');
+        CRUD::field('scoreRed');
+        CRUD::field('entraineurRed');
+        CRUD::field('controllerRed');
+        CRUD::field('jugeRed');
         CRUD::field('arbitre_id');
+        CRUD::field('date');
+        CRUD::field('salle_id');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
