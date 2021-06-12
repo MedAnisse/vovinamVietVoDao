@@ -1,0 +1,45 @@
+
+
+/*  les celibriter photo et contenu side by side  */
+* {
+  box-sizing: border-box;
+}
+
+/* Center website */
+.celibmain {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.celibrow {
+  margin: 8px -16px;
+  
+}
+
+/* Creqtion de '4 colomns side by side  */
+.celibcolumn {
+  float: left;
+  width: 25%;
+ 
+}
+
+/* Effacer les flotteurs après les lignes */
+.celibrow:after {
+  content: "";
+  display: table;
+ clear: both;
+}
+
+/* Content */
+.celibcontent {
+  background-color: white;
+  padding: 10px;
+  
+}
+.styleimageCelib
+{
+	width:180px;
+	height: 220px;
+	
+}
+

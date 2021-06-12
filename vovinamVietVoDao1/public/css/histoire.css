@@ -1,0 +1,39 @@
+IMG.displayed {
+    display: block;
+    width: 700px;
+	height: 150px;
+	
+  margin-left: auto;
+  margin-right: auto; }
+
+    .image1right
+{
+	width: 250px; height:400px; float:right ;
+}
+
+img.aire {
+    display: block;
+    width: 550px;
+	height: 300px;
+	
+  margin-left: auto;
+  margin-right: auto; 
+}
+img.displayedd{
+    display: block;
+    width: 500px;
+  height: 250px;
+  
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+
+
+
+ 
+
+
+	
+
+

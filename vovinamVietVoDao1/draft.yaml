@@ -1,0 +1,79 @@
+models:
+  Models\Club:
+    name: string
+    presidentname: string
+    presidentlastname: string
+    presidentphone: string
+    phone: string
+    address: string
+
+  Models\Entraineur:
+    name: string
+    lastName: string
+    phone: string
+    club_id: id foreign
+
+  Models\Joueur:
+    name: string
+    lastName: string
+    phone: string
+    birthdate: date
+    poid: string
+    club_id: id foreign
+    technique: json
+
+  Models\Juge:
+    name: string
+    lastName: string
+    phone: string
+
+  Models\Arbitre:
+    name: string
+    lastName: string
+    phone: string
+
+
+  Models\Combat:
+    joueurBleu: id
+    entraineurBleu: id
+    jugeBleu: id
+    controllerBleu: id
+
+    scoreBlue: integer nullable
+    scoreRed: integer nullable
+
+    joueurRed: id
+    entraineurRed: id
+    controllerRed: id
+    jugeRed: id
+
+    arbitre_id: id foreign
+    date: date
+    salle_id:  id foreign
+
+  Models\CombatHistoric:
+    joueurBleu: id
+    entraineurBleu: id
+    jugeBleu: id
+    controllerBleu: id
+
+    scoreBlue: integer 
+    scoreRed: integer 
+
+    joueurRed: id
+    entraineurRed: id
+    controllerRed: id
+    jugeRed: id
+
+    arbitre_id: id foreign
+    date: date
+    salle_id:  id foreign
+
+  Models\Salle:
+    address: string
+    name  : string
+
+  Models\Controller:
+    code: uuid
+
+seeders:  Club, Entraineur, Joueur, Juge, Arbitre, Combat, Salle, Controller, CombatHistoric

@@ -1,0 +1,62 @@
+
+
+/* image du MAP */
+
+
+#image {
+  max-width: 100%; height: 490px;
+  display: block; 
+  border: 1px solid black;
+  margin: auto;
+ }
+
+#img-caption {
+max-width: 100%;
+font-size: 20px;
+text-align: center;
+}
+
+
+/* tableau TEMPERATURE */
+.table-bordered {
+  border: 1px solid #ddd;
+   background-color: white;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+table tfoot tr td {
+  text-align: center;
+ 
+}
+
+.text-center{
+	text-align: center;
+}
+
+/* couleur ds la table*/
+
+.red
+{
+	background-color: red;
+}
+.orange
+{
+	background-color: orange;
+}
+.orange1
+{background-color: rgb(255, 128, 2);}
+.jaune
+{
+	background-color: yellow;
+}
+
+
+
+
+
+
+
+

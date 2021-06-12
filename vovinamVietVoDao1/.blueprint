@@ -1,0 +1,47 @@
+created:
+    - database/factories/Models/ClubFactory.php
+    - database/factories/Models/EntraineurFactory.php
+    - database/factories/Models/JoueurFactory.php
+    - database/factories/Models/JugeFactory.php
+    - database/factories/Models/ArbitreFactory.php
+    - database/factories/Models/CombatFactory.php
+    - database/factories/Models/CombatHistoricFactory.php
+    - database/factories/Models/SalleFactory.php
+    - database/factories/Models/ControllerFactory.php
+    - database/migrations/2021_06_12_184335_create_clubs_table.php
+    - database/migrations/2021_06_12_184336_create_entraineurs_table.php
+    - database/migrations/2021_06_12_184337_create_joueurs_table.php
+    - database/migrations/2021_06_12_184338_create_juges_table.php
+    - database/migrations/2021_06_12_184339_create_arbitres_table.php
+    - database/migrations/2021_06_12_184340_create_combats_table.php
+    - database/migrations/2021_06_12_184341_create_combat_historics_table.php
+    - database/migrations/2021_06_12_184342_create_salles_table.php
+    - database/migrations/2021_06_12_184343_create_controllers_table.php
+    - app/Models/Club.php
+    - app/Models/Entraineur.php
+    - app/Models/Joueur.php
+    - app/Models/Juge.php
+    - app/Models/Arbitre.php
+    - app/Models/Combat.php
+    - app/Models/CombatHistoric.php
+    - app/Models/Salle.php
+    - app/Models/Controller.php
+    - database/seeders/ClubSeeder.php
+    - database/seeders/EntraineurSeeder.php
+    - database/seeders/JoueurSeeder.php
+    - database/seeders/JugeSeeder.php
+    - database/seeders/ArbitreSeeder.php
+    - database/seeders/CombatSeeder.php
+    - database/seeders/SalleSeeder.php
+    - database/seeders/ControllerSeeder.php
+    - database/seeders/CombatHistoricSeeder.php
+models:
+    Models\Club: { name: string, presidentname: string, presidentlastname: string, presidentphone: string, phone: string, address: string }
+    Models\Entraineur: { name: string, lastName: string, phone: string, club_id: 'id foreign' }
+    Models\Joueur: { name: string, lastName: string, phone: string, birthdate: date, poid: string, club_id: 'id foreign', technique: json }
+    Models\Juge: { name: string, lastName: string, phone: string }
+    Models\Arbitre: { name: string, lastName: string, phone: string }
+    Models\Combat: { joueurBleu: id, entraineurBleu: id, jugeBleu: id, controllerBleu: id, scoreBlue: 'integer nullable', scoreRed: 'integer nullable', joueurRed: id, entraineurRed: id, controllerRed: id, jugeRed: id, arbitre_id: 'id foreign', date: date, salle_id: 'id foreign' }
+    Models\CombatHistoric: { joueurBleu: id, entraineurBleu: id, jugeBleu: id, controllerBleu: id, scoreBlue: integer, scoreRed: integer, joueurRed: id, entraineurRed: id, controllerRed: id, jugeRed: id, arbitre_id: 'id foreign', date: date, salle_id: 'id foreign' }
+    Models\Salle: { address: string, name: string }
+    Models\Controller: { code: uuid }

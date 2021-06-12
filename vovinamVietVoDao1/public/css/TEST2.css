@@ -1,0 +1,264 @@
+
+/* PARTAGER PAR TT LES PAGES  */
+/* le corp */
+
+body {
+
+margin: 0px; /* les marge du corp */
+
+margin-top: 50px; /* photo dji soi soi m3a le nav pas d'espace entre eux decaler du haut */
+
+font-family:  'Roboto Slab' , sans-serif;  
+
+}
+
+ 
+/* En tete */
+header {
+display: flex;  /* 	Displays an element as a block-level flex container*/
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 50px;
+line-height: 50px; /* l'ecriture centrer du nav*/
+background-color: #F5F5F5;
+
+}
+
+ /* menu navigateur et image * pour tt les elements */
+
+header * {
+display: inline;
+height: 50px;
+
+}
+
+ 
+/* espace entre les nav*/
+header ul {
+padding: 0px;
+}
+header li {
+margin-left: 10px;
+}
+
+/* le shade de transition colore*/
+.transition a {
+      text-decoration:none;
+	  color: black;
+	  border-bottom: 1px solid black; /* le tre */
+	  padding: 10px;
+	  transition: border 1s ease-out;  
+	  -webkit-transition: border 1s ease-out; 
+	  -o-transition: all 1s ease-out; 
+      -moz-transition: border 1s ease-out; 
+      }
+.transition a:hover {border-bottom: 50px solid rgb(238,216,14);}
+
+ 
+ /*  le corp DU HOME */
+ 
+ .section {
+	min-height: 100vh;
+ }
+ .home{
+  display: flex;  /*Displays an element as a block-level flex container*/
+
+/* centrer tt les elem */
+justify-content: center;
+align-items: center;
+text-align: center;
+background-size: contain; /* photo de background prend tt lespace section 100vh */
+background-position: center center; /* centrer */
+background-repeat: no-repeat; 
+background-attachment: fixed; /*l'image precedente ne bouge pas scroll */
+
+ }
+
+.welcome{
+
+display: flex;	/*Displays an element as a block-level flex container*/
+
+/* centrer tt les elem */
+justify-content: center;
+align-items: center;
+text-align: center;
+background-size: cover; /* photo de background prend tt lespace section 100vh */
+background-position: center center; /* centrer */
+background-repeat: no-repeat; 
+background-attachment: fixed; /*l'image precedente ne bouge pas scroll */
+
+}
+
+
+ 
+/* SECTION HOME */
+.home-txt {
+  position: relative;  /* posisionner LE TXT PAS BESION */
+    text-align: center;
+  color: white;         
+
+}
+/* SECTION WELCOME*/
+
+	 
+.centerP {
+  font-size: 1.5em;	
+  text-align: center;
+  width: 800px;
+  
+}
+	 
+
+/*   le tirer rouge au desous des H1 */
+
+ hr{
+	text-align: center;
+	width:60px;
+  border: 1px solid blue;
+
+	
+}
+/* qlq DECORATION PARTAGER PAR TT LES PAGES*/
+
+p{
+	text-indent: 30px;
+	
+}
+
+.souligner
+{
+	color: ;
+	text-decoration: underline;
+}
+
+.highlight
+{
+background-color: #eee;
+}
+
+a{
+	color: rgb(255, 72, 0);
+	text-decoration: none;
+
+}
+/*  h1 font style */
+
+.monospace {font-family: monospace;
+             font-size: 3em;
+			 text-align: center;
+			 }
+
+/* style du H1*/
+.h1BIG {
+color: white;
+font-size: 5em;
+
+}
+
+
+/*--------------------------------------------------------*/
+
+/* pied de la page */
+footer {
+
+text-align: center;
+background-color: #eee;
+padding: 50px;
+
+}
+
+
+
+
+/* le BOX  READ MORE*/
+
+.docbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}			 
+.boxform{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Open Sans", arial, sans-serif;
+  letter-spacing: 0.5px;
+}			 
+.boxform:hover {
+  background-color: rgb(255, 255, 255); /*black */
+  color: rgb(0, 0, 0);  /*tmessiha yweli blanc*/
+}
+
+
+
+ 
+
+
+
+
+
+/* les background de chaque section de cette page */
+
+#welcome {
+
+    background-color:white;
+
+}
+
+
+
+#contact {
+	 
+}
+/*------------*/
+
+/* les background de LA 1ER section DE LA PAGE HISTOIRE*/
+
+#home2 {
+	 
+background-image:  url('../20.jpg');
+
+}
+/* la background de la 1ere section DU vitnam  */
+
+#home3
+{
+	background-image: url('../viet.jpg');	
+	
+}
+/* la background de la 1er section DE techniques */
+#home6
+{
+  
+  background-image: url('../technique.jpg');
+}
+
+/* la background de la 1er section Arbitrage */
+#home4
+{
+  background-image: url('../35.jpg');
+}
+
+/* BACKGROUND */
+#home7{
+  background-image: url('../34.jpg');
+}
+
+#home0 {
+   
+background-image:  url('../0.png');
+
+}

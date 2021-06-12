@@ -1,0 +1,140 @@
+
+
+
+/*  LA DIV  BLANCHE BOITE  mise en page de TT NLES PAGES  apart Home*/
+.history
+{
+	height: auto; 
+	margin: 0px  200px;
+	background-color: white;
+	font-weight: normal;
+    font-size  : 1em;
+    line-height: 150%;
+    font-family: Georgia, Arial, sans-serif;	
+    padding: 100px;
+}
+       /* L'ARRIERE COULEUR DE LA SECTION */
+#histoir
+{
+	text-align:justify;
+	background-color: #eee;
+}
+
+
+/*------------------------------------------------*/
+
+/*    PARTAGER PAR 3 PAGES HOTEL CULTURE PLACE TOURISTIQUE */
+/*   LE MENU EXTRA  Liste PARTAGER SUR 3 PAGE HTML ( hotel culture et palce touristique)*/
+.menu{
+  vertical-align:middle;
+  width: 300px;
+  display:inline-block;
+ font-family: 'Source Sans Pro', sans-serif;
+  transform:translate3d(0,0,0);
+  top: 50px;
+  left: 40px;
+  position: fixed;
+}
+.menu input{
+  position:relative;
+  left:-9999px;
+}
+.menu #togglemenu:checked ~ ul {
+  max-height:500px;
+  padding-bottom:1em;
+}
+.togglemenu {
+background: #ddd;
+color: white;
+display: block;
+padding: 0.75em;
+text-align: center;
+cursor:pointer;
+font-family: 'entypo', sans-serif;
+}
+.togglemenu:before{
+  content: "\2630"; /* CODE POUR LES 3 BARS _ _ _  */
+  font-size:1.5em;
+
+}
+.menu ul{
+  margin-top:2px;
+  text-align:left;
+  max-height:0px;
+  overflow:hidden;
+  padding-bottom:0;
+  transition:300ms ease all;
+}
+.menu li{
+  margin-bottom:1px;
+  position:relative;
+  z-index:10;
+  transition:300ms ease all;
+  top: -1px;
+  height: 55px;
+}
+.menu li a {
+display: block;
+position:relative;
+width:100%;
+padding: 1em;
+background: BLACK;
+text-decoration:none;
+color:white;
+box-sizing:border-box;
+transition:300ms ease all;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*    CENTRER UNE IMAGE */
+.imageCENTRER {
+  width: 100%;
+  height: 550px;
+  border: 2px solid black;
+}
+
+/* LES 3 IMAGE SIDE BY SIDE  */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.taille1
+{
+	width: 100%; height: 180px;
+}
+.taille2
+{
+	width: 100%; height: 280px;
+}
+.taille3
+{
+	width: 100%; height: 600px;
+}
+.taille4
+{
+	width: 100%; height: 360px;
+}
+/*  LES IMAGES A LA DROITE ET A LA GAUCHE */
+.image1right
+{
+	width: 250px; height:200px; float:right;  border:1px solid black;margin: 10px;
+}
+.image2left
+{
+	width: 250px; height:250px; float:left; border:1px solid black;margin: 10px;
+}
+
+
+/*----------------------------*/
