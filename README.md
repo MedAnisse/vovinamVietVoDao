@@ -12,4 +12,4 @@ Projet universitaire Master 2 embarque
 # Configuration
 
 1. Génération de key:  `php artisan key:generate`
-2. Migration de base de données: `php artisan migrate:fresh`
+2. Migration de base de données: `php artisan migrate`
