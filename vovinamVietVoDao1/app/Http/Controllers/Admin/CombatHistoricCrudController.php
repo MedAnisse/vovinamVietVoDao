@@ -39,19 +39,26 @@ class CombatHistoricCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('joueurBleu');
-        CRUD::column('entraineurBleu');
-        CRUD::column('jugeBleu');
-        CRUD::column('controllerBleu');
-        CRUD::column('scoreBlue');
-        CRUD::column('scoreRed');
-        CRUD::column('joueurRed');
-        CRUD::column('entraineurRed');
-        CRUD::column('controllerRed');
-        CRUD::column('jugeRed');
+        CRUD::column('joueurBleu')->label('Joueur Bleu');
+        CRUD::column('joueurRed')->label('Joueur Rouge');
+        CRUD::column('scoreBlue')->label('Score Bleu');
+        CRUD::column('scoreRed')->label('Score Rouge');
+        CRUD::column('controllerBleu')->label('Manette Bleu');
+        CRUD::column('controllerRed')->label('Manette Rouge');
         CRUD::column('arbitre_id');
-        CRUD::column('date');
-        CRUD::column('salle_id');
+        CRUD::column('salle_id')->label('Salle');
+        CRUD::column('date')->label('Date');
+        CRUD::column('entraineurBleu')->label('Entraineur Bleu');
+        CRUD::column('jugeBleu')->label('Juge Bleu');
+        
+        
+        
+        CRUD::column('entraineurRed')->label('Entraineur Rouge');
+        
+        CRUD::column('jugeRed')->label('Juge Rouge');
+        
+        
+        
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -71,66 +78,66 @@ class CombatHistoricCrudController extends CrudController
         CRUD::setValidation(CombatHistoricRequest::class);
 
         $this->crud->addField([
-        'label' => "joueur_bleu_id",
+        'label' => "Joueur Bleu",
         'name' => "joueur_bleu_id",
         'type' => 'select',
         'entity'    => 'joueurBleu', 
         'model'     => "App\Models\Joueur"
         ]);
         $this->crud->addField([
-        'label' => "entraineur_bleu_id",
+        'label' => "Entraineur Bleu",
         'name' => "entraineur_bleu_id",
         'type' => 'select',
         'entity'    => 'entraineurBleu', 
         'model'     => "App\Models\Entraineur"
         ]);
         $this->crud->addField([
-        'label' => "juge_bleu_id",
+        'label' => "Juge Bleu",
         'name' => "juge_bleu_id",
         'type' => 'select',
         'entity'    => 'jugeBleu', 
         'model'     => "App\Models\Juge"
         ]);
         $this->crud->addField([
-        'label' => "controller_bleu_id",
+        'label' => "Manette Bleu",
         'name' => "controller_bleu_id",
         'type' => 'select',
         'entity'    => 'controllerBleu', 
         'model'     => "App\Models\Controller"
         ]);
-        CRUD::field('scoreBlue');
-        CRUD::field('scoreRed');
+        CRUD::field('scoreBlue')->label('Score Bleu');
+        CRUD::field('scoreRed')->label('Score Rouge');
         $this->crud->addField([
-        'label' => "joueur_red_id",
+        'label' => "Joueur Rouge",
         'name' => "joueur_red_id",
         'type' => 'select',
         'entity'    => 'joueurRed', 
         'model'     => "App\Models\Joueur"
         ]);
         $this->crud->addField([
-        'label' => "entraineur_red_id",
+        'label' => "Entraineur Rouge",
         'name' => "entraineur_red_id",
         'type' => 'select',
         'entity'    => 'entraineurRed', 
         'model'     => "App\Models\Entraineur"
         ]);
         $this->crud->addField([
-        'label' => "controller_red_id",
+        'label' => "Manette Rouge",
         'name' => "controller_red_id",
         'type' => 'select',
         'entity'    => 'controllerRed', 
         'model'     => "App\Models\Controller"
         ]);
         $this->crud->addField([
-        'label' => "juge_red_id",
+        'label' => "Juge Rouge",
         'name' => "juge_red_id",
         'type' => 'select',
         'entity'    => 'jugeRed', 
         'model'     => "App\Models\Juge"
         ]);
         CRUD::field('arbitre_id');
-        CRUD::field('date');
-        CRUD::field('salle_id');
+        CRUD::field('date')->label('Date');
+        CRUD::field('salle_id')->label('Salle');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

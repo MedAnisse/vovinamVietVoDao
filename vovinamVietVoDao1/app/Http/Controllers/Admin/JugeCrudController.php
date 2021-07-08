@@ -39,9 +39,9 @@ class JugeCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('lastName');
-        CRUD::column('phone');
+        CRUD::column('name')->label('Nom');
+        CRUD::column('lastName')->label('Prénom');
+        CRUD::column('phone')->label('Téléphone');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,9 +60,9 @@ class JugeCrudController extends CrudController
     {
         CRUD::setValidation(JugeRequest::class);
 
-        CRUD::field('name');
-        CRUD::field('lastName');
-        CRUD::field('phone');
+        CRUD::field('name')->label('Nom');
+        CRUD::field('lastName')->label('Prénom');
+        CRUD::field('phone')->label('Téléphone');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

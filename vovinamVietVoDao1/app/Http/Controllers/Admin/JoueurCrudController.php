@@ -39,14 +39,19 @@ class JoueurCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('lastName');
-        CRUD::column('phone');
-        CRUD::column('birthdate');
-        CRUD::column('poid');
-        CRUD::column('club_id');
-        CRUD::column('technique');
-
+        
+        //CRUD::column('technique');
+        CRUD::column('name')->label('Nom');
+        CRUD::column('lastName')->label('Prénom');
+        CRUD::column('phone')->label('Téléphone');
+        CRUD::column('birthdate')->label('Date_De_Naissance');
+        CRUD::column('poid')->label('Poid');
+        CRUD::column('club_id')->label('Club');
+        $this->crud->addColumn([
+    'name'  => 'technique', 
+    'label' => 'technique', 
+    'type'  => 'table'
+]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -63,14 +68,19 @@ class JoueurCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(JoueurRequest::class);
-
-        CRUD::field('name');
-        CRUD::field('lastName');
-        CRUD::field('phone');
-        CRUD::field('birthdate');
-        CRUD::field('poid');
-        CRUD::field('club_id');
-        CRUD::field('technique');
+        CRUD::field('name')->label('Nom');
+        CRUD::field('lastName')->label('Prénom');
+        CRUD::field('phone')->label('Téléphone');
+        CRUD::field('birthdate')->label('Date_De_Naissance');
+        CRUD::field('poid')->label('Poid');
+        CRUD::field('club_id')->label('Club');
+       //CRUD::field('technique');
+        $this->crud->addField([   
+    'name'            => 'technique',
+    'label'           => 'technique',
+    'type'            => 'table',
+    'entity_singular' => 'option'
+                            ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -90,3 +100,7 @@ class JoueurCrudController extends CrudController
         $this->setupCreateOperation();
     }
 }
+
+
+
+

@@ -30,6 +30,7 @@
         <p> Le Vovinam Việt Võ Đạo est l'art martial vietnamien par excellence </p>
         <a target="_blank" href="images/44.jpg">
             <img class="image1right"src="images/44.jpg"></a>
+        
         <p>
             Il conjugue les techniques de base [KY THUAT CAN BAN] (poings, pieds, coudes, genoux), les postures [TAN], les techniques de clé [KHOA], les techniques respiratoires [THO], les chutes [LAN LON], les stratégies de combat [CHIEN LUOC], les enchaînements de combat imaginaires [QUYEN], les combats codifiés [SONG LUYEN], la lutte vietnamienne [VAT], les techniques d’armes (bâton long [BONG PHAP], épée [KIEM], couteau [DAO]…), les techniques de coups de pieds sautés [DON CHAN].
         </p>
@@ -40,7 +41,7 @@
 
         <div class="docbox">
 
-            <a class="boxform" href="/histoire"> En savoir plus → </a>
+            <a class="boxform" href="{{route('histoire')}}"> En savoir plus → </a>
 
 
         </div>

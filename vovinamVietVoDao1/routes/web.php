@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/UpadteScore/{controler_id}/{score}', function ($controler_id,$score) {
 
     $controler=DB::select('select id from controllers where code= ?',[$controler_id]);
@@ -110,19 +110,19 @@ Route::get('/EnregistrerCombat/{controler_id}', function ($controler_id) {
 });
 Route::get('/vovinam', function () {
     return view('vovinam');
-});
+})->name('vovinam');
 Route::get('/technique', function () {
     return view('technique');
-});
+})->name('technique');
 Route::get('/arbitrage', function () {
     return view('arbitrage');
-});
+})->name('arbitrage');
 Route::get('/documentation', function () {
     return view('documentation');
-});
+})->name('documentation');
 Route::get('/histoire', function () {
     return view('histoire');
-});
+})->name('histoire');
 Route::get('/connecter', function () {
     return redirect('/admin');
-});
+})->name('connecter');

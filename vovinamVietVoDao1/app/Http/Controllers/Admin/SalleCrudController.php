@@ -39,8 +39,8 @@ class SalleCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('address');
-        CRUD::column('name');
+        CRUD::column('address')->label('Adresse');
+        CRUD::column('name')->label('Nom');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,8 +59,8 @@ class SalleCrudController extends CrudController
     {
         CRUD::setValidation(SalleRequest::class);
 
-        CRUD::field('address');
-        CRUD::field('name');
+        CRUD::field('address')->label('Adresse');
+        CRUD::field('name')->label('Nom');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

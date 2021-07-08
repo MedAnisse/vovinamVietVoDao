@@ -39,10 +39,10 @@ class ArbitreCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('lastName');
-        CRUD::column('phone');
-
+       
+        CRUD::column('name')->label('Nom');
+        CRUD::column('lastName')->label('Prénom');
+        CRUD::column('phone')->label('Téléphone');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -59,10 +59,10 @@ class ArbitreCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ArbitreRequest::class);
+        CRUD::field('name')->label('Nom');
+        CRUD::field('lastName')->label('Prénom');
+        CRUD::field('phone')->label('Téléphone');
 
-        CRUD::field('name');
-        CRUD::field('lastName');
-        CRUD::field('phone');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -17,21 +17,21 @@
 
 <header>
     <!-- photo icon -->
-    <a href="/">
+    <a href="{{route('welcome')}}">
         <img src="images/logo.jpg">
     </a>
 
     <!-- MENU NAV -->
-    <nav class="transition">
-<ul>
+<nav class="transition">
+    <ul>
 
 
-<li><a href="/histoire"> Histoire </a><li>
-<li><a href="/vovinam">Vovinam </a></li>
-<li><a href="/technique">Techniques</a></li>
-<li><a href="/arbitrage">Arbitrage</a></li>
-<li><a href="/documentation">Documentation </a></li>
-<li><a href="/connecter">Se connecter </a></li>
+<li><a href="{{route('histoire')}}"> Histoire </a><li>
+<li><a href="{{route('vovinam')}}">Vovinam </a></li>
+<li><a href="{{route('technique')}}">Techniques</a></li>
+<li><a href="{{route('arbitrage')}}">Arbitrage</a></li>
+<li><a href="{{route('documentation')}}">Documentation </a></li>
+<li><a href="{{route('connecter')}}">Se connecter </a></li>
 
 </ul>
 

@@ -39,12 +39,12 @@ class ClubCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('presidentname');
-        CRUD::column('presidentlastname');
-        CRUD::column('presidentphone');
-        CRUD::column('phone');
-        CRUD::column('address');
+        CRUD::column('name')->label('Nom');
+        CRUD::column('presidentname')->label('Nom du Présidant');
+        CRUD::column('presidentlastname')->label('Prénom du Président');
+        CRUD::column('presidentphone')->label('Téléphone du Président');
+        CRUD::column('phone')->label('Téléphone du Club');
+        CRUD::column('address')->label('Adresse');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -62,13 +62,12 @@ class ClubCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(ClubRequest::class);
-
-        CRUD::field('name');
-        CRUD::field('presidentname');
-        CRUD::field('presidentlastname');
-        CRUD::field('presidentphone');
-        CRUD::field('phone');
-        CRUD::field('address');
+        CRUD::field('name')->label('Nom');
+        CRUD::field('presidentname')->label('Nom du Présidant');
+        CRUD::field('presidentlastname')->label('Prénom du Président');
+        CRUD::field('presidentphone')->label('Téléphone du Président');
+        CRUD::field('phone')->label('Téléphone du Club');
+        CRUD::field('address')->label('Adresse');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

@@ -39,11 +39,10 @@ class EntraineurCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('name');
-        CRUD::column('lastName');
-        CRUD::column('phone');
-        CRUD::column('club_id');
-
+        CRUD::column('name')->label('Nom');
+        CRUD::column('lastName')->label('Prénom');
+        CRUD::column('phone')->label('Téléphone');
+        CRUD::column('club_id')->label('Club');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -60,12 +59,10 @@ class EntraineurCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(EntraineurRequest::class);
-
-        CRUD::field('name');
-        CRUD::field('lastName');
-        CRUD::field('phone');
-        CRUD::field('club_id');
-
+        CRUD::field('name')->label('Nom');
+        CRUD::field('lastName')->label('Prénom');
+        CRUD::field('phone')->label('Téléphone');
+        CRUD::field('club_id')->label('Club');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

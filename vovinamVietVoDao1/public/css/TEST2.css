@@ -229,36 +229,37 @@ padding: 50px;
 
 #home2 {
 	 
-background-image:  url('../20.jpg');
+background-image:  url('../images/20.PNG');
 
 }
 /* la background de la 1ere section DU vitnam  */
 
 #home3
 {
-	background-image: url('../viet.jpg');	
+	background-image: url('../images/viet.jpg');	
 	
 }
 /* la background de la 1er section DE techniques */
 #home6
 {
   
-  background-image: url('../technique.jpg');
+  background-image: url('../images/technique.jpg');
 }
 
 /* la background de la 1er section Arbitrage */
 #home4
 {
-  background-image: url('../35.jpg');
+  background-image: url('../images/35.jpg');
 }
 
 /* BACKGROUND */
 #home7{
-  background-image: url('../34.jpg');
+  background-image: url('../images/34.jpg');
 }
 
 #home0 {
-   
-background-image:  url('../0.png');
+
+ 
+background-image:  url('../images/0.png');
 
 }
